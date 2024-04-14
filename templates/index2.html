@@ -16,45 +16,42 @@
 
 <body style="background-color:black">
 
+    
     <nav class="navbar" style="background-color:#00a65a">
-        <p class="navbar-brand">MY BOOK RECOMMENDER</p>
-
+        <p class="navbar-brand" style="font-weight: bold; font-size: 24px;">MY BOOK RECOMMENDER</p>
         <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/recommend">Recommend</a></li>
-            <li><a>CONTACT</a></li>
+            <li><a href="/" style="font-size: 18px; color: white;">Home</a></li> <!-- Increased font-size and changed text color to white -->
+            <li><span style="margin: 0 10px; color: white;">|</span></li> <!-- Added a separator -->
+            <li><a href="/recommend" style="font-size: 18px; color: white;">Recommend</a></li> <!-- Increased font-size and changed text color to white -->
         </ul>
     </nav>
-
+    
 
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-white" style="font-size:50px">Top 50 Books</h1>
+                <h1 class="text-white" style="font-size:50px">Best Picks: Top Books to Explore</h1> <!-- Changed title to "Top 15 Books" -->
             </div>
-
-
-            {% for i in range(book_name | length) %}
-
-                <div class="col-md-3" style="margin-top:50px">
+    
+            {% for i in range(16) %} 
+    
+            <div class="col-md-3" style="margin-top:50px">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body text-center"> 
                         <img class="card-img-top" src="{{ image[i] }}">
                         <h4 class="text-white">{{ book_name[i] }}</h4>
                         <h5 class="text-white">{{ author[i] }}</h5>
                         <h5 class="text-white">Votes - {{ votes[i] }}</h5>
-                        <h5 class="text-white">Rating - {{ rating[i] }}</h5>
+                        <h5 class="text-white">Rating - {{ "%.2f" % rating[i] }}</h5>
                     </div>
                 </div>
             </div>
-
+    
             {% endfor %}
-
-
-
-
+    
         </div>
     </div>
+    
 
 
 </body>

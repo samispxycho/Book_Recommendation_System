@@ -16,21 +16,22 @@
 
 <body style="background-color:black">
 
-    <nav class="navbar" style="background-color:#00a65a">
-        <p class="navbar-brand">MY BOOK RECOMMENDER</p>
 
+    <nav class="navbar" style="background-color:#00a65a">
+        <p class="navbar-brand" style="font-weight: bold; font-size: 24px;">MY BOOK RECOMMENDER</p>
         <ul class="nav navbar-nav">
-            <li><a href="/">HOME</a></li>
-            <li><a href="/recommend">Recommend</a></li>
-            <li><a>CONTACT</a></li>
+            <li><a href="/" style="font-size: 18px; color: white;">Home</a></li>
+            <li><a href="/recommend" style="font-size: 18px; color: white;">Recommend</a></li>
         </ul>
     </nav>
+    
+    
 
 
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-white" style="font-size:50px">SEARCH FOR TITLE</h1>
+                <h1 class="text-white" style="font-size:50px">EXPLORE BY TITLE</h1>
 
                 <form action="/recommend_books" method="post">
                     <input name="user_input" type="text" class="form-control"><br>
@@ -43,23 +44,20 @@
             {% if data %}
 
             {% for i in data %}
-             <div class="col-md-3" style="margin-top:50px">
+  
+                <div class="col-md-3" style="margin-top: 50px">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <img class="card-img-top" src="{{i[2]}}">
                             <h4 class="text-white">{{i[0]}}</h4>
                             <h5 class="text-white">{{i[1]}}</h5>
                         </div>
                     </div>
                 </div>
+                
             {% endfor %}
 
             {% endif %}
-
-
-
-
-
 
         </div>
     </div>
